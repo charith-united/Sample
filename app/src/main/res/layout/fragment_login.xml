@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.login.fragment.LoginFragment">
+
+    <data>
+
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/LoginBg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- BG Image -->
+        <androidx.appcompat.widget.AppCompatImageView
+            style="@style/LoginBgImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <!-- Content -->
+        <ScrollView
+            style="@style/LoginContentParent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/default_padding"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Title Label -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_login_title"
+                    style="@style/LoginTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal" />
+
+                <!-- Sub Title Label -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_login_subtitle"
+                    style="@style/LoginSubTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_margin" />
+
+                <!-- Id Field -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_login_key"
+                    style="@style/LoginKeyTextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_margin">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/tet_login_key"
+                        style="@style/LoginKeyEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Password Field -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_login_password"
+                    style="@style/LoginPasswordTextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_margin">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tet_login_password"
+                        style="@style/LoginPasswordEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Login Button -->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_login"
+                    style="@style/LoginButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/login_button_top_margin"
+                    android:onClick="@{clickListener}"
+                    app:cornerRadius="@dimen/default_corner_radius"
+                    tools:text="Login" />
+
+                <!-- Divider -->
+                <View
+                    style="@style/LoginDivider"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_2"
+                    android:layout_marginVertical="@dimen/default_margin" />
+
+                <!-- Register Button -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_login_register"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/login_register"/>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

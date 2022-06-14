@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Sample</string>
+
+    <string name="login_title">User Login</string>
+    <string name="login_subtitle">Please enter your credentials to login.</string>
+    <string name="login_button">Login</string>
+    <string name="login_password_hint">Password</string>
+    <string name="login_id_hint">Email / Phone</string>
+    <string name="login_register">Don\'t have an account? Click here to register </string>
+    <string name="login_register_link">Click here</string>
+    <string name="login_id_error">Please enter valid Email or Phone</string>
+    <string name="login_password_error">Please enter a valid password</string>
+</resources>

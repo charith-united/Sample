@@ -1,0 +1,35 @@
+apply plugin: 'maven-publish'
+apply from: "versions.gradle"
+
+task androidSourcesJar(type: Jar) {
+    archiveClassifier.set('sources')
+    from android.sourceSets.main.java.srcDirs
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+
+                artifact androidSourcesJar
+                groupId = 'com.architecture'
+                artifactId = "$maven_artifact_id"
+                version = "$project_version"
+            }
+        }
+
+        repositories {
+            maven {
+                def releaseUrl = ""
+                def snapshotUrl = ""
+                url = "$project_version".contains("SNAPSHOT") ? snapshotUrl : releaseUrl
+
+                credentials {
+                    username = "username"
+                    password = "password"
+                }
+            }
+        }
+    }
+}
